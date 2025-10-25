@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio EGI Dian Adi Pradana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FAFAFA;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        nav {
+            background-color: #4B0082;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 20px;
+        }
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            color: #FFD700;
+            transform: translateY(-2px);
+        }
+        header {
+            background: linear-gradient(135deg, #4B0082 0%, #2E003E 100%);
+            color: #FFFFFF;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+            position: relative;
+            overflow: hidden;
+            min-height: 300px;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://via.placeholder.com/1920x600/4B0082/FFFFFF?text=Amikom+Pattern') no-repeat center center;
+            background-size: cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        .profile-img {
+            border-radius: 70%;
+            width: 180px;
+            height: 180px;
+            border: 6px solid #FFD700; /* Border emas tebal */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 20px rgba(75, 0, 130, 0.5); /* Glow ungu */
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 1s ease-in;
+            margin-bottom: 20px;
+        }
+        .profile-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 30px rgba(75, 0, 130, 0.7); /* Glow lebih kuat */
+        }
+        .header-text {
+            animation: fadeIn 1.5s ease-in; /* Staggered animasi */
+        }
+        h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3em;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        header p {
+            margin: 10px 0 0 0;
+            font-size: 1.4em;
+            color: #FFFFFF;
+            max-width: 600px;
+        }
+        section {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #FFFFFF;
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+            border-left: 6px solid #4B0082;
+            animation: fadeInUp 1s ease-in;
+            position: relative;
+        }
+        section:before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: linear-gradient(to bottom, #4B0082, #FFD700);
+        }
+        h2 {
+            color: #4B0082;
+            font-family: 'Montserrat', sans-serif;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 20px 0;
+            padding-left: 30px;
+            position: relative;
+            transition: transform 0.2s;
+        }
+        li:hover {
+            transform: translateX(5px);
+        }
+        li:before {
+            content: '▶';
+            color: #4B0082;
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+        button {
+            padding: 10px;
+            background-color: #4B0082;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2E003E;
+        }
+        a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        a:hover {
+            color: #4B0082;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .social-links li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .social-links a {
+            font-size: 1.5em;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #4B0082;
+            color: #FFFFFF;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #FFD700;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav li {
+                margin: 10px 0;
+            }
+            header {
+                padding: 60px 20px;
+            }
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            header p {
+                font-size: 1.2em;
+            }
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#skills">Keterampilan</a></li>
+            <li><a href="#social">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <img src="/foto/Gemini_Generated_Image_jc7pngjc7pngjc7p.png" alt="Gambar Profil EGI Dian Adi Pradana" class="profile-img">
+        <div class="header-text">
+            <h1>EGI Dian Adi Pradana</h1>
+            <p>Mahasiswa Universitas Amikom | Web Developer, AI Prompter, Cyber Security, IT Support</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>Tentang Saya</h2>
+        <p>Halo! Saya adalah EGI Dian Adi Pradana, mahasiswa aktif di Universitas Amikom. Saya memiliki minat mendalam dalam pengembangan teknologi, khususnya di bidang web development, kecerdasan buatan, keamanan siber, dan dukungan IT. Sebagai mahasiswa, saya terus belajar dan mengembangkan keterampilan praktis melalui proyek-proyek akademik dan pribadi.</p>
+        <p>Saya percaya bahwa teknologi dapat memecahkan masalah dunia nyata, dan saya berkomitmen untuk berkontribusi melalui inovasi. Di luar akademik, saya suka berkolaborasi dalam tim, berpikir kritis, dan terus meningkatkan diri. Soft skill saya meliputi kemampuan bekerja sama dalam tim, komunikasi efektif, manajemen waktu, dan kemauan belajar hal baru.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Keterampilan</h2>
+        <ul>
+            <li><strong>Web Developer</strong>: Pengalaman dalam pengembangan front-end dan back-end menggunakan HTML, CSS, JavaScript, PHP, dan framework seperti React atau Laravel.</li>
+            <li><strong>AI Prompter</strong>: Keahlian dalam membuat prompt efektif untuk model AI seperti ChatGPT, termasuk fine-tuning dan integrasi AI dalam aplikasi.</li>
+            <li><strong>Cyber Security</strong>: Pengetahuan dasar tentang keamanan jaringan, enkripsi, pencegahan serangan, dan alat seperti Wireshark atau Kali Linux.</li>
+            <li><strong>IT Support</strong>: Pengalaman dalam troubleshooting perangkat keras dan perangkat lunak, dukungan teknis, dan manajemen sistem.</li>
+            <li><strong>Soft Skills</strong>: Kolaborasi tim, pemecahan masalah, adaptabilitas, dan kepemimpinan.</li>
+        </ul>
+    </section>
+
+    <section id="social">
+        <h2>Media Sosial & Kontak</h2>
+        <ul class="social-links">
+            <li><a href="https://www.instagram.com/001ardhana?igsh=bzhqNGc3N25nODB6&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://github.com/EGI80" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/egi-dian-adi-pradana-4b255b31b/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        </ul>
+        <p>Untuk pertanyaan atau kolaborasi, silakan hubungi saya melalui LinkedIn atau email (jika tersedia).</p>
+        <h3>Kirim Pesan</h3>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Nama Anda" required>
+            <input type="email" id="email" placeholder="Email Anda" required>
+            <textarea id="message" placeholder="Pesan Anda" rows="5" required></textarea>
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 EGI Dian Adi Pradana. Dibuat dengan ❤️ menggunakan HTML/CSS. | <a href="mailto:egi@example.com">Email Saya</a></p>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        sections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s, transform 0.6s';
+            observer.observe(section);
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah dikirim. (Ini simulasi; integrasi backend diperlukan untuk pengiriman nyata.)');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
